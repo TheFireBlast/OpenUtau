@@ -14,7 +14,7 @@ using SharpCompress;
 
 namespace OpenUtau.App.ViewModels {
     public class NotePropertiesViewModel : ViewModelBase, ICmdSubscriber {
-        public string Title { get => ThemeManager.GetString("noteproperty") + " (" + selectedNotes.Count + " notes)"; }
+        public string Title { get => string.Format(ThemeManager.GetString("noteproperty.withcount"), selectedNotes.Count); }
         [Reactive] public string Lyric { get; set; } = string.Empty;
         [Reactive] public string Tone { get; set; } = string.Empty;
         [Reactive] public float PortamentoLength { get; set; }
